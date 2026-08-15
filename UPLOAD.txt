@@ -1,0 +1,13 @@
+BuildHq v0.7.0 — Phase 1 Eiffel / StructureGraph
+
+MERGE INTO REPO ROOT (buildhq-app):
+  src/lib/forge/          ← replace entire folder (includes structures/)
+  src/components/workspace/DesignSidebar.tsx
+  package.json            ← version 0.7.0
+
+OR use the FULL zip if you prefer a clean tree.
+
+SMOKE TEST
+  Prompt mode → material: popsicle sticks
+  "3 foot Eiffel Tower from popsicle sticks"
+  Expect: tapering 4-leg lattice ~36" tall, glue joins, splice notes

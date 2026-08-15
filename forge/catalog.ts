@@ -1,0 +1,512 @@
+/**
+ * Seed Material Universe – real retail dimensions from public sources.
+ * Expandable. Later: user uploads, community, or product APIs.
+ */
+
+import type { CatalogItem } from "./types";
+
+export const FORGE_CATALOG: CatalogItem[] = [
+  // ── Craft wood / sticks ──────────────────────────────────────────────
+  {
+    id: "popsicle-standard",
+    name: "Standard Popsicle Stick",
+    brand: "Generic / Craft",
+    category: "craft_wood",
+    formFactor: "stick",
+    dims: { length: 4.5, width: 0.375, thickness: 0.08 },
+    unitsPerPack: 100,
+    unitCostUsd: 0.03,
+    aliases: ["popsicle stick", "craft stick", "ice cream stick", "tongue depressor small"],
+    tags: ["wood", "craft", "kids", "model"],
+    preferredJoins: ["glue", "notch"],
+    canCut: true,
+    color: "#e8d5a3",
+    roughness: 0.65,
+    searchQuery: "standard 4.5 inch popsicle sticks bulk",
+    notes: "Most common craft stick. Birch. ±1mm variance typical.",
+  },
+  {
+    id: "popsicle-jumbo",
+    name: "Jumbo Craft Stick",
+    brand: "Generic",
+    category: "craft_wood",
+    formFactor: "stick",
+    dims: { length: 6, width: 0.75, thickness: 0.08 },
+    unitsPerPack: 50,
+    unitCostUsd: 0.06,
+    aliases: ["jumbo popsicle", "large craft stick", "tongue depressor"],
+    tags: ["wood", "craft", "stronger"],
+    preferredJoins: ["glue", "notch", "screw"],
+    canCut: true,
+    color: "#e0c990",
+    roughness: 0.65,
+    searchQuery: "jumbo craft sticks 6 inch",
+  },
+  {
+    id: "popsicle-mini",
+    name: "Mini Craft Stick",
+    category: "craft_wood",
+    formFactor: "stick",
+    dims: { length: 2.5, width: 0.25, thickness: 0.06 },
+    unitsPerPack: 200,
+    unitCostUsd: 0.015,
+    aliases: ["mini popsicle", "small craft stick"],
+    tags: ["wood", "detail", "miniature"],
+    preferredJoins: ["glue"],
+    canCut: true,
+    color: "#f0e0b8",
+    searchQuery: "mini craft sticks 2.5 inch",
+  },
+  {
+    id: "popsicle-giant",
+    name: "Giant Craft Stick",
+    category: "craft_wood",
+    formFactor: "stick",
+    dims: { length: 12, width: 0.75, thickness: 0.12 },
+    unitsPerPack: 25,
+    unitCostUsd: 0.25,
+    aliases: ["giant popsicle stick", "12 inch craft stick"],
+    tags: ["wood", "structure", "architecture model"],
+    preferredJoins: ["glue", "notch", "screw"],
+    canCut: true,
+    color: "#d4b87a",
+    searchQuery: "giant craft sticks 12 inch",
+  },
+  {
+    id: "bamboo-skewer-12",
+    name: "Bamboo Skewer 12\"",
+    category: "craft_wood",
+    formFactor: "dowel",
+    dims: { length: 12, diameter: 0.125 },
+    unitsPerPack: 100,
+    unitCostUsd: 0.02,
+    aliases: ["skewer", "bamboo stick", "kebab stick"],
+    tags: ["bamboo", "thin", "pin"],
+    preferredJoins: ["glue", "friction", "pin"],
+    canCut: true,
+    color: "#c9a86c",
+    searchQuery: "bamboo skewers 12 inch",
+  },
+
+  // ── Paper / cardboard tubes ──────────────────────────────────────────
+  {
+    id: "paper-towel-roll",
+    name: "Paper Towel Roll Core",
+    brand: "Generic (Bounty, Brawny, etc.)",
+    category: "paper_tube",
+    formFactor: "tube",
+    dims: { length: 11, diameter: 1.5, innerDiameter: 1.4 },
+    unitsPerPack: 1,
+    unitCostUsd: 0.0, // free after use
+    aliases: ["paper towel tube", "kitchen roll core", "paper towel cardboard"],
+    tags: ["cardboard", "recycled", "tube", "kids", "tower"],
+    preferredJoins: ["glue", "tape", "slot", "friction"],
+    canCut: true,
+    color: "#d4c4a8",
+    roughness: 0.85,
+    searchQuery: "empty paper towel rolls craft",
+    notes: "Typical empty core ~11\" long × ~1.5\" OD. Slight brand variation.",
+  },
+  {
+    id: "toilet-paper-roll",
+    name: "Toilet Paper Roll Core",
+    category: "paper_tube",
+    formFactor: "tube",
+    dims: { length: 3.7, diameter: 1.6, innerDiameter: 1.5 },
+    unitsPerPack: 1,
+    unitCostUsd: 0.0,
+    aliases: ["TP roll", "toilet paper tube", "bathroom tissue core"],
+    tags: ["cardboard", "recycled", "short tube"],
+    preferredJoins: ["glue", "tape", "slot"],
+    canCut: true,
+    color: "#d8c9b0",
+    roughness: 0.85,
+    searchQuery: "empty toilet paper rolls craft",
+    notes: "Commonly ~3.5–4\" long. Great for modular stacking.",
+  },
+  {
+    id: "mailing-tube-2x24",
+    name: "Mailing Tube 2\" × 24\"",
+    category: "paper_tube",
+    formFactor: "tube",
+    dims: { length: 24, diameter: 2.0, innerDiameter: 1.9 },
+    unitsPerPack: 1,
+    unitCostUsd: 3.5,
+    aliases: ["poster tube", "shipping tube 2 inch"],
+    tags: ["cardboard", "strong tube"],
+    preferredJoins: ["glue", "tape", "friction"],
+    canCut: true,
+    color: "#c4b090",
+    searchQuery: "2 inch diameter mailing tube 24 inch",
+  },
+
+  // ── PVC ──────────────────────────────────────────────────────────────
+  {
+    id: "pvc-half-sch40",
+    name: '1/2" Schedule 40 PVC Pipe',
+    brand: "Generic (Charlotte, etc.)",
+    category: "pvc_plumbing",
+    formFactor: "pipe",
+    dims: { length: 120, diameter: 0.84, innerDiameter: 0.602 }, // 10 ft typical
+    unitsPerPack: 1,
+    unitCostUsd: 4.5,
+    aliases: ["half inch PVC", "1/2 PVC", "schedule 40 1/2"],
+    tags: ["pvc", "plumbing", "structure", "outdoor"],
+    preferredJoins: ["solvent", "friction", "screw"],
+    canCut: true,
+    color: "#f5f5f0",
+    roughness: 0.35,
+    metalness: 0.05,
+    searchQuery: "1/2 inch schedule 40 PVC pipe 10 ft",
+    notes: "OD 0.840\". Nominal size is ID approx.",
+  },
+  {
+    id: "pvc-3-4-sch40",
+    name: '3/4" Schedule 40 PVC Pipe',
+    category: "pvc_plumbing",
+    formFactor: "pipe",
+    dims: { length: 120, diameter: 1.05, innerDiameter: 0.804 },
+    unitsPerPack: 1,
+    unitCostUsd: 6.0,
+    aliases: ["3/4 PVC", "three quarter PVC"],
+    tags: ["pvc", "structure"],
+    preferredJoins: ["solvent", "friction"],
+    canCut: true,
+    color: "#f0f0eb",
+    searchQuery: "3/4 inch schedule 40 PVC pipe",
+  },
+  {
+    id: "pvc-1-sch40",
+    name: '1" Schedule 40 PVC Pipe',
+    category: "pvc_plumbing",
+    formFactor: "pipe",
+    dims: { length: 120, diameter: 1.315, innerDiameter: 1.029 },
+    unitsPerPack: 1,
+    unitCostUsd: 8.5,
+    aliases: ["1 inch PVC", "one inch schedule 40"],
+    tags: ["pvc", "strong"],
+    preferredJoins: ["solvent", "friction"],
+    canCut: true,
+    color: "#eeeeea",
+    searchQuery: "1 inch schedule 40 PVC pipe 10 ft",
+  },
+
+  // ── Dowels ───────────────────────────────────────────────────────────
+  {
+    id: "dowel-1-4-36",
+    name: '1/4" Hardwood Dowel 36"',
+    category: "dowel_rod",
+    formFactor: "dowel",
+    dims: { length: 36, diameter: 0.25 },
+    unitsPerPack: 1,
+    unitCostUsd: 1.2,
+    aliases: ["quarter inch dowel", "1/4 dowel rod"],
+    tags: ["wood", "round", "pin"],
+    preferredJoins: ["glue", "friction", "pin"],
+    canCut: true,
+    color: "#d4b896",
+    searchQuery: "1/4 inch hardwood dowel 36 inch",
+  },
+  {
+    id: "dowel-1-2-36",
+    name: '1/2" Hardwood Dowel 36"',
+    category: "dowel_rod",
+    formFactor: "dowel",
+    dims: { length: 36, diameter: 0.5 },
+    unitsPerPack: 1,
+    unitCostUsd: 2.5,
+    aliases: ["half inch dowel", "1/2 dowel"],
+    tags: ["wood", "structure"],
+    preferredJoins: ["glue", "screw"],
+    canCut: true,
+    color: "#c9a878",
+    searchQuery: "1/2 inch hardwood dowel",
+  },
+
+  // ── Lumber (dimensional) ─────────────────────────────────────────────
+  {
+    id: "lumber-2x4-8",
+    name: "2×4 Stud (8 ft)",
+    brand: "Generic SPF / Douglas Fir",
+    category: "lumber",
+    formFactor: "board",
+    dims: { length: 96, width: 3.5, height: 1.5 }, // actual dressed size
+    unitsPerPack: 1,
+    unitCostUsd: 5.5,
+    aliases: ["2x4", "two by four", "stud"],
+    tags: ["lumber", "framing", "structure"],
+    preferredJoins: ["screw", "nail", "glue"],
+    canCut: true,
+    color: "#d8c4a0",
+    roughness: 0.75,
+    searchQuery: "2x4x8 stud",
+    notes: "Nominal 2×4 = actual ~1.5×3.5. Standard for framing.",
+  },
+  {
+    id: "lumber-1x4-8",
+    name: "1×4 Board (8 ft)",
+    category: "lumber",
+    formFactor: "board",
+    dims: { length: 96, width: 3.5, height: 0.75 },
+    unitsPerPack: 1,
+    unitCostUsd: 4.0,
+    aliases: ["1x4", "one by four"],
+    tags: ["lumber", "trim", "shelf"],
+    preferredJoins: ["screw", "nail", "glue"],
+    canCut: true,
+    color: "#e0d0b0",
+    searchQuery: "1x4x8 pine board",
+  },
+
+  // ── Sheet goods (bridge to original BuildHq) ─────────────────────────
+  {
+    id: "plywood-3-4-4x8",
+    name: '3/4" Plywood 4×8',
+    category: "sheet_goods",
+    formFactor: "sheet",
+    dims: { length: 96, width: 48, thickness: 0.75 },
+    unitsPerPack: 1,
+    unitCostUsd: 55,
+    aliases: ["3/4 plywood", "cabinet plywood", "BC plywood"],
+    tags: ["sheet", "cabinet", "furniture"],
+    preferredJoins: ["screw", "glue", "notch"],
+    canCut: true,
+    color: "#d4a574",
+    roughness: 0.65,
+    searchQuery: "3/4 inch 4x8 plywood",
+  },
+  {
+    id: "foam-board-20x30",
+    name: "Foam Board 20×30\"",
+    category: "foam",
+    formFactor: "sheet",
+    dims: { length: 30, width: 20, thickness: 0.2 },
+    unitsPerPack: 1,
+    unitCostUsd: 4,
+    aliases: ["foamcore", "foam board", "presentation board"],
+    tags: ["lightweight", "model", "craft"],
+    preferredJoins: ["glue", "tape", "pin"],
+    canCut: true,
+    color: "#f8f8f5",
+    roughness: 0.9,
+    searchQuery: "20x30 foam board",
+  },
+  {
+    id: "cardboard-corrugated-sheet",
+    name: "Corrugated Cardboard Sheet (approx)",
+    category: "cardboard",
+    formFactor: "sheet",
+    dims: { length: 36, width: 24, thickness: 0.15 },
+    unitsPerPack: 1,
+    unitCostUsd: 0.5,
+    aliases: ["cardboard sheet", "shipping cardboard", "box cardboard"],
+    tags: ["recycled", "free", "prototype"],
+    preferredJoins: ["tape", "glue", "slot"],
+    canCut: true,
+    color: "#c4a878",
+    roughness: 0.95,
+    searchQuery: "corrugated cardboard sheets",
+  },
+  // ── More dream materials ─────────────────────────────────────────────
+  {
+    id: "straw-plastic",
+    name: "Plastic Drinking Straw",
+    category: "plastic",
+    formFactor: "tube",
+    dims: { length: 7.75, diameter: 0.25, innerDiameter: 0.2 },
+    unitsPerPack: 100,
+    unitCostUsd: 0.02,
+    aliases: ["straw", "drinking straw", "plastic straw"],
+    tags: ["plastic", "kids", "lightweight"],
+    preferredJoins: ["tape", "glue", "friction"],
+    canCut: true,
+    color: "#f0f0f0",
+    roughness: 0.3,
+    searchQuery: "plastic drinking straws bulk",
+  },
+  {
+    id: "toothpick",
+    name: "Wooden Toothpick",
+    category: "craft_wood",
+    formFactor: "stick",
+    dims: { length: 2.5, width: 0.08, thickness: 0.08 },
+    unitsPerPack: 250,
+    unitCostUsd: 0.005,
+    aliases: ["toothpick", "wood toothpick"],
+    tags: ["tiny", "detail", "model"],
+    preferredJoins: ["glue"],
+    canCut: true,
+    color: "#f5e6c8",
+    roughness: 0.6,
+    searchQuery: "wooden toothpicks",
+  },
+  {
+    id: "bbq-skewer-12",
+    name: "Bamboo BBQ Skewer 12\"",
+    category: "craft_wood",
+    formFactor: "dowel",
+    dims: { length: 12, diameter: 0.15 },
+    unitsPerPack: 100,
+    unitCostUsd: 0.03,
+    aliases: ["bbq skewer", "kebab skewer", "bamboo skewer"],
+    tags: ["bamboo", "structure", "model"],
+    preferredJoins: ["glue", "friction"],
+    canCut: true,
+    color: "#c9a86c",
+    searchQuery: "bamboo bbq skewers 12 inch",
+  },
+  {
+    id: "soda-can",
+    name: "Aluminum Soda Can (empty)",
+    category: "recycled",
+    formFactor: "tube",
+    dims: { length: 4.83, diameter: 2.6, innerDiameter: 2.5 },
+    unitsPerPack: 1,
+    unitCostUsd: 0,
+    aliases: ["soda can", "coke can", "beer can", "aluminum can"],
+    tags: ["recycled", "metal", "cylinder"],
+    preferredJoins: ["tape", "glue", "friction"],
+    canCut: true,
+    color: "#c0c0c0",
+    metalness: 0.7,
+    roughness: 0.35,
+    searchQuery: "empty aluminum cans craft",
+    notes: "Typical 12 oz can. Rinse before building.",
+  },
+  {
+    id: "plastic-bottle-16oz",
+    name: "16 oz Plastic Bottle (empty)",
+    category: "recycled",
+    formFactor: "tube",
+    dims: { length: 8, diameter: 2.75, innerDiameter: 2.6 },
+    unitsPerPack: 1,
+    unitCostUsd: 0,
+    aliases: ["water bottle", "plastic bottle", "soda bottle"],
+    tags: ["recycled", "plastic", "kids"],
+    preferredJoins: ["tape", "glue"],
+    canCut: true,
+    color: "#a8d4e8",
+    roughness: 0.25,
+    searchQuery: "empty plastic water bottles craft",
+  },
+  {
+    id: "legos-2x4",
+    name: "LEGO-style Brick 2×4 (approx)",
+    category: "plastic",
+    formFactor: "block",
+    dims: { length: 1.26, width: 0.63, height: 0.45 },
+    unitsPerPack: 1,
+    unitCostUsd: 0.15,
+    aliases: ["lego", "lego brick", "building brick", "duplo small"],
+    tags: ["plastic", "kids", "modular"],
+    preferredJoins: ["friction"],
+    canCut: false,
+    color: "#c41e3a",
+    roughness: 0.4,
+    searchQuery: "LEGO 2x4 bricks",
+    notes: "Nominal LEGO proportions. Use real bricks for the build.",
+  },
+  {
+    id: "copper-pipe-half",
+    name: '1/2" Copper Pipe',
+    category: "metal",
+    formFactor: "pipe",
+    dims: { length: 120, diameter: 0.625, innerDiameter: 0.545 },
+    unitsPerPack: 1,
+    unitCostUsd: 18,
+    aliases: ["copper pipe", "half inch copper"],
+    tags: ["metal", "plumbing", "premium"],
+    preferredJoins: ["solvent", "friction", "screw"],
+    canCut: true,
+    color: "#b87333",
+    metalness: 0.85,
+    roughness: 0.3,
+    searchQuery: "1/2 inch copper pipe 10 ft",
+  },
+  {
+    id: "pool-noodle",
+    name: "Pool Noodle",
+    category: "foam",
+    formFactor: "tube",
+    dims: { length: 55, diameter: 2.5, innerDiameter: 0.75 },
+    unitsPerPack: 1,
+    unitCostUsd: 3,
+    aliases: ["pool noodle", "foam noodle", "swim noodle"],
+    tags: ["foam", "kids", "outdoor", "flexible"],
+    preferredJoins: ["friction", "tape", "cable_tie"],
+    canCut: true,
+    color: "#ff6b6b",
+    roughness: 0.9,
+    searchQuery: "pool noodles bulk",
+  },
+];
+
+/** Fast lookup */
+export const CATALOG_BY_ID: Record<string, CatalogItem> = Object.fromEntries(
+  FORGE_CATALOG.map((item) => [item.id, item])
+);
+
+/** Categories for UI grouping */
+export const CATALOG_CATEGORIES: { id: CatalogItem["category"]; label: string; emoji: string }[] = [
+  { id: "craft_wood", label: "Craft Sticks & Wood", emoji: "🪵" },
+  { id: "paper_tube", label: "Paper & Cardboard Tubes", emoji: "🧻" },
+  { id: "pvc_plumbing", label: "PVC Pipe", emoji: "🔧" },
+  { id: "dowel_rod", label: "Dowels & Rods", emoji: "🥢" },
+  { id: "lumber", label: "Dimensional Lumber", emoji: "🏗️" },
+  { id: "sheet_goods", label: "Sheet Goods", emoji: "📐" },
+  { id: "foam", label: "Foam & Model", emoji: "📦" },
+  { id: "cardboard", label: "Cardboard", emoji: "📦" },
+  { id: "metal", label: "Metal", emoji: "⚙️" },
+  { id: "plastic", label: "Plastic", emoji: "🧪" },
+  { id: "recycled", label: "Recycled / Free", emoji: "♻️" },
+  { id: "hardware", label: "Hardware", emoji: "🔩" },
+  { id: "other", label: "Other", emoji: "✨" },
+];
+
+/**
+ * Fuzzy-ish search for the Word-style dropdown.
+ * Scores name + aliases + tags. Returns ranked list.
+ */
+export function searchCatalog(query: string, limit = 40): CatalogItem[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return FORGE_CATALOG.slice(0, limit);
+
+  const scored = FORGE_CATALOG.map((item) => {
+    let score = 0;
+    const name = item.name.toLowerCase();
+    const aliases = (item.aliases ?? []).map((a) => a.toLowerCase());
+    const tags = (item.tags ?? []).map((t) => t.toLowerCase());
+
+    if (name === q) score += 100;
+    else if (name.startsWith(q)) score += 60;
+    else if (name.includes(q)) score += 30;
+
+    for (const a of aliases) {
+      if (a === q) score += 90;
+      else if (a.startsWith(q)) score += 50;
+      else if (a.includes(q)) score += 20;
+    }
+    for (const t of tags) {
+      if (t === q || t.startsWith(q)) score += 15;
+    }
+    // multi-word soft match
+    const words = q.split(/\s+/);
+    if (words.length > 1) {
+      const allHit = words.every(
+        (w) => name.includes(w) || aliases.some((a) => a.includes(w)) || tags.some((t) => t.includes(w))
+      );
+      if (allHit) score += 25;
+    }
+    return { item, score };
+  });
+
+  return scored
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.item);
+}
+
+export function getCatalogItem(id: string): CatalogItem | undefined {
+  return CATALOG_BY_ID[id];
+}
