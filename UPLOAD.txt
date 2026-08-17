@@ -1,13 +1,35 @@
-BuildHq v0.7.0 — Phase 1 Eiffel / StructureGraph
+BuildHq ROOT FIX — 0.7.3
+========================
 
-MERGE INTO REPO ROOT (buildhq-app):
-  src/lib/forge/          ← replace entire folder (includes structures/)
-  src/components/workspace/DesignSidebar.tsx
-  package.json            ← version 0.7.0
+WHAT WENT WRONG
+The previous 0.7.2 upload replaced package.json and tsconfig.json
+with standalone (non-Next.js) versions. The app could not build.
 
-OR use the FULL zip if you prefer a clean tree.
+WHAT THIS FIX DOES
+Restores only the 3 root files needed so the Next.js app works again.
+Your existing src/, forge/, components/ etc. stay in place.
 
-SMOKE TEST
-  Prompt mode → material: popsicle sticks
-  "3 foot Eiffel Tower from popsicle sticks"
-  Expect: tapering 4-leg lattice ~36" tall, glue joins, splice notes
+HOW TO UPLOAD (GitHub website — no git knowledge needed)
+--------------------------------------------------------
+1. Unzip this folder.
+2. Go to: https://github.com/EzServices-wpd/buildhq-app
+3. Click the file "package.json" → pencil icon (Edit) → 
+   select all → delete → paste the new package.json content → Commit.
+4. Do the same for "tsconfig.json".
+5. Do the same for "README.md" (optional but recommended).
+
+OR the easier bulk way:
+1. On the repo page click "Add file" → "Upload files"
+2. Drag these 3 files in:
+     package.json
+     tsconfig.json
+     README.md
+3. GitHub will ask to replace existing files → choose Replace
+4. Commit changes
+
+THEN
+- Vercel should auto-redeploy, or click Redeploy in Vercel
+- Or locally: npm install && npm run dev
+
+You do NOT need to delete any other files.
+The structure / lattice / forge code under src/ and forge/ can stay.
